@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lizeth Vega | Nomad Genetics</title>
+  <meta name="description" content="Perfil profesional de Lizeth Vega, KAM Nomad Hermosillo, con experiencia en pruebas genómicas y centros de infusión." />
+  <style>
+    :root{
+      --bg:#eef6ff;
+      --bg2:#f8fbff;
+      --card:#ffffff;
+      --line:#d7e8fb;
+      --primary:#1d6fd8;
+      --primary-2:#4ea1ff;
+      --text:#12314f;
+      --muted:#557792;
+      --shadow:0 20px 60px rgba(23, 72, 132, 0.12);
+      --radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(78,161,255,.18), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(29,111,216,.14), transparent 28%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+    }
+    .shell{
+      width:min(1180px, calc(100% - 32px));
+      margin:0 auto;
+      padding:24px 0 48px;
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:18px 22px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(255,255,255,.9);
+      border-radius:22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      position:sticky;
+      top:12px;
+      z-index:20;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+    .brand img{height:48px; width:auto; display:block; filter: brightness(0) saturate(100%) invert(22%) sepia(43%) saturate(982%) hue-rotate(176deg) brightness(94%) contrast(91%); opacity:.98}
+    .brand-copy{min-width:0}
+    .eyebrow{
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--primary);
+      margin-bottom:2px;
+    }
+    .brand-copy strong{display:block; font-size:16px}
+    .nav-actions{
+      display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      border:1px solid var(--line);
+      transition:.22s ease;
+      white-space:nowrap;
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, var(--primary), var(--primary-2));
+      color:white;
+      border:none;
+      box-shadow:0 12px 30px rgba(29,111,216,.24);
+    }
+    .btn.secondary{
+      background:white;
+      color:var(--primary);
+    }
+    .btn:hover{transform:translateY(-2px)}
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;
+      margin-top:26px;
+      align-items:stretch;
+    }
+    .panel{
+      background:rgba(255,255,255,.86);
+      border:1px solid rgba(255,255,255,.95);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .copy{
+      padding:34px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-height:560px;
+    }
+    .headline{
+      font-size:clamp(34px, 5vw, 62px);
+      line-height:1.02;
+      margin:10px 0 14px;
+      font-weight:800;
+      letter-spacing:-.03em;
+    }
+    .headline span{
+      background:linear-gradient(135deg, var(--primary), #72bbff);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .lead{
+      font-size:18px;
+      line-height:1.65;
+      color:var(--muted);
+      max-width:640px;
+    }
+    .bio-box{
+      margin-top:22px;
+      padding:18px 20px;
+      background:linear-gradient(180deg, #f9fcff, #eef6ff);
+      border:1px solid var(--line);
+      border-radius:20px;
+    }
+    .bio-box strong{display:block; margin-bottom:8px; font-size:15px}
+    .bio-box p{margin:0; color:var(--muted); line-height:1.7}
+    .facts{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:14px;
+      margin-top:22px;
+    }
+    .fact{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+    .fact small{
+      display:block;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-size:11px;
+      margin-bottom:6px;
+      font-weight:700;
+    }
+    .fact strong{font-size:15px; line-height:1.45}
+
+    .profile-card{
+      overflow:hidden;
+      position:relative;
+      min-height:560px;
+      display:flex;
+      flex-direction:column;
+      background:linear-gradient(180deg, rgba(255,255,255,.96), rgba(244,250,255,.96));
+    }
+    .media-wrap{
+      padding:18px 18px 0;
+    }
+    .video-box{
+      position:relative;
+      overflow:hidden;
+      border-radius:26px;
+      border:1px solid rgba(29,111,216,.08);
+      background:linear-gradient(180deg, #dff0ff, #f8fbff);
+      min-height:430px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.4);
+    }
+    .video-box::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(8,53,110,.02));
+      pointer-events:none;
+      z-index:1;
+    }
+    .video-box video{
+      width:100%;
+      height:100%;
+      min-height:430px;
+      object-fit:cover;
+      object-position:center 35%;
+      display:block;
+      filter:saturate(1.02) contrast(1.01);
+      background:#eaf4ff;
+    }
+    .badge{
+      position:absolute;
+      top:18px;
+      left:18px;
+      z-index:2;
+      background:rgba(255,255,255,.85);
+      color:var(--primary);
+      border:1px solid rgba(29,111,216,.12);
+      border-radius:999px;
+      padding:9px 14px;
+      font-weight:800;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      backdrop-filter: blur(8px);
+    }
+    .card-body{
+      padding:22px 24px 26px;
+    }
+    .card-body h2{
+      margin:0;
+      font-size:34px;
+      line-height:1.02;
+      letter-spacing:-.02em;
+    }
+    .role{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:17px;
+      font-weight:600;
+    }
+    .contact-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      background:white;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--text);
+      text-decoration:none;
+      font-weight:700;
+    }
+    .section{
+      margin-top:28px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:22px;
+    }
+    .mini-card{
+      padding:24px;
+    }
+    .mini-card h3{
+      margin:0 0 10px;
+      font-size:22px;
+    }
+    .mini-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.75;
+    }
+    .link-stack{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+    .resource{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:18px 18px;
+      background:linear-gradient(180deg, #ffffff, #f4f9ff);
+      border:1px solid var(--line);
+      border-radius:20px;
+      text-decoration:none;
+      color:inherit;
+      transition:.22s ease;
+    }
+    .resource:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
+    .resource strong{display:block; margin-bottom:4px}
+    .resource span{color:var(--muted); font-size:14px}
+    .resource-mark{
+      width:44px; height:44px; flex:0 0 44px;
+      display:grid; place-items:center;
+      border-radius:14px;
+      background:linear-gradient(135deg, var(--primary), var(--primary-2));
+      color:white;
+      font-weight:900;
+    }
+    .footer-note{
+      margin-top:22px;
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+    }
+    @media (max-width: 980px){
+      .hero, .section{grid-template-columns:1fr}
+      .copy, .profile-card{min-height:auto}
+      .facts{grid-template-columns:1fr}
+      /* En móvil/tablet: primero aparece el video con contacto, después la reseña y habilidades */
+      .profile-card{order:1}
+      .copy{order:2}
+    }
+    @media (max-width: 640px){
+      .shell{width:min(100% - 20px, 1180px)}
+      .topbar{padding:16px; align-items:flex-start; flex-direction:column}
+      .nav-actions{width:100%; justify-content:stretch}
+      .nav-actions .btn{flex:1}
+      .copy{padding:24px}
+      .headline{font-size:36px}
+      .card-body{padding:20px}
+      .card-body h2{font-size:28px}
+      .role{font-size:16px}
+      .video-box, .video-box video{min-height:360px}
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="topbar">
+      <div class="brand">
+        <div style="padding:10px 14px;border-radius:16px;background:linear-gradient(180deg,#ffffff,#edf5ff);border:1px solid var(--line);box-shadow:0 10px 24px rgba(23,72,132,.08)"><img src="assets/logo-nomad.png" alt="Nomad Genetics" /></div>
+        <div class="brand-copy">
+          <div class="eyebrow">Perfil profesional</div>
+          <strong>Nomad Genetics</strong>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <a class="btn secondary" href="https://nomadgenetics.com/" target="_blank" rel="noopener noreferrer">Sitio oficial</a>
+        <a class="btn primary" href="https://soporteti-desing.github.io/catalogo-Nomad/" target="_blank" rel="noopener noreferrer">Ver catálogo</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <article class="panel copy">
+        <div class="eyebrow">KAM Nomad Hermosillo</div>
+        <h1 class="headline">Lizeth Vega, <span>acompañamiento comercial con enfoque clínico</span></h1>
+        <div class="bio-box">
+          <strong>Un poco sobre mi</strong>
+          <p>Soy Lizeth Vega y en mi día a día, busco ser ese puente donde la precisión de las pruebas genómicas se encuentra con un trato humano y cercano. Entiendo los retos del entorno clínico y los centros de infusión, por eso me esfuerzo en comunicar el valor de lo que hacemos de forma transparente. Mi objetivo es que cada promotor de la salud sienta que cuenta con un aliado que no solo entiende el negocio, sino que prioriza la agilidad y la confianza en beneficio del paciente.</p>
+        </div>
+
+        <div class="facts">
+          <div class="fact">
+            <small>Especialidad</small>
+            <strong>Pruebas genómicas y vinculación con cuentas estratégicas.</strong>
+          </div>
+          <div class="fact">
+            <small>Enfoque</small>
+            <strong>Seguimiento cercano con visión comercial y sensibilidad clínica.</strong>
+          </div>
+          <div class="fact">
+            <small>Atención</small>
+            <strong>Apoyo a médicos, centros de infusión y procesos de coordinación.</strong>
+          </div>
+        </div>
+      </article>
+
+      <aside class="panel profile-card">
+        <div class="media-wrap">
+          <div class="video-box">
+            <div class="badge">Nomad Genetics</div>
+            <video autoplay muted loop playsinline preload="auto" aria-label="Tarjeta de presentación de Lizeth Vega">
+              <source src="assets/lizeth_vega.mp4" type="video/mp4" />
+              Tu navegador no soporta video HTML5.
+            </video>
+          </div>
+        </div>
+        <div class="card-body">
+          <h2>Lizeth Vega</h2>
+          <div class="role">KAM Nomad Hermosillo</div>
+          <div class="contact-row">
+            <a class="pill" href="tel:+526621830207">📞 66 2183 0207</a>
+            <a class="pill" href="https://wa.me/526621830207" target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+    
+  </main>
+</body>
+</html>
